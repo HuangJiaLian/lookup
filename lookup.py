@@ -19,7 +19,7 @@ def welcom():
 
 welcom()
 lookup_cmd = "trans -sp  :zh info_to_lookup"
-notify_cmd = "notify-send -i face-laugh TITLE \"`trans -p  -brief :zh info_to_lookup`\""
+notify_cmd = "notify-send -i face-glasses TITLE \"`trans -p  -brief :zh info_to_lookup`\""
 recent_value = pyperclip.paste()
 while not is_sigint_up:
 	tmp_value = pyperclip.paste()
