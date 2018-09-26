@@ -9,6 +9,8 @@ https://github.com/soimort/translate-shell
 https://pyperclip.readthedocs.io/en/latest/introduction.html
 ## 3. notify-send
 sudo apt install libnotify-bin
+## 4. festival
+sudo apt install festival festvox-kallpc16k
 ```
 
 

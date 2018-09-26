@@ -1,3 +1,4 @@
+#!/usr/bin/env python 
 import os,sys,string
 import time,signal
 import pyperclip
@@ -18,15 +19,21 @@ def welcom():
 	print("+----------------------+")
 
 welcom()
-lookup_cmd = "trans -sp  :zh info_to_lookup"
-notify_cmd = "notify-send -i face-glasses TITLE \"`trans -p  -brief :zh info_to_lookup`\""
+# lookup_cmd = "trans -sp  :zh info_to_lookup"
+lookup_cmd = "trans   :zh info_to_lookup"
+notify_cmd = "notify-send -i face-glasses TITLE \"`trans  -brief :zh info_to_lookup`\""
+speak_cmd = 'echo \'info_to_speak\' | festival --tts'
+# notify_cmd = "notify-send -i face-glasses TITLE \"`trans -p  -brief :zh info_to_lookup`\""
 recent_value = pyperclip.paste()
 while not is_sigint_up:
 	tmp_value = pyperclip.paste()
 	if tmp_value != recent_value:
 		recent_value = tmp_value
 		cmd_0 = lookup_cmd.replace('info_to_lookup',recent_value)
+		cmd_speak = speak_cmd.replace('info_to_speak', recent_value)
 		cmd_1 = notify_cmd.replace('info_to_lookup', recent_value).replace('TITLE',recent_value)
 		os.system(cmd_0)
+		os.system(cmd_speak)
 		os.system(cmd_1)
+		
 	time.sleep(0.1)
