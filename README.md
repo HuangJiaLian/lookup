@@ -11,6 +11,8 @@ https://pyperclip.readthedocs.io/en/latest/introduction.html
 sudo apt install libnotify-bin
 ## 4. festival
 sudo apt install festival festvox-kallpc16k
+## 5. xsel
+sudo apt install xsel
 ```
 
 
